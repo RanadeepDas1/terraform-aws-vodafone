@@ -11,14 +11,9 @@ variable "hw" {
 default = "t2.nano"
 }
 
-variable "key" {
-default = "ed-20Sep"
-}
-
 resource "aws_instance" "myawsserver" {
   ami = var.os
   instance_type = var.hw
-  key_name = var.key
   tags = {
     Name = "Ranadeep-aws-ec2-instance1"
     Env = "Dev"
